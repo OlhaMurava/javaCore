@@ -13,14 +13,19 @@ public class DepartmentDemo {
         departments.add(new Department("Department of History", 7, 2, "Faculty of Humanities", "History Building", DepartmentType.ARTS));
         departments.add(new Department("Department of Business", 6, 1, "Faculty of Business", "Business Building", DepartmentType.BUSINESS));
 
-        // Вивід інформації про всі кафедри
+        // Вивід інформації про всі кафедри у форматі toString
+        System.out.println("All Departments:");
         for (Department dept : departments) {
-            System.out.println(dept);
+            System.out.println(dept.toString());
         }
 
         // Сортування кафедр за назвою
         Collections.sort(departments);
-        System.out.println("After Sorting by name:");
-        departments.forEach(System.out::println);
+        System.out.println("\nAfter Sorting by Name:");
+        departments.forEach(dept -> System.out.println(dept.toString()));
+
+        // Перевірка на рівність перших двох кафедр
+        boolean areEqual = departments.get(0).equals(departments.get(1));
+        System.out.println("\nAre the first two departments equal? " + areEqual);
     }
 }
